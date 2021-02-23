@@ -7,7 +7,7 @@ setup(
     description='A http client Testing python project',
     url='https://gitlab.wuage-inc.com/jianxing.wei/pc-url-monitor.git',
     author='Jianxing.wei',
-    author_email='jianxing.wei@wuage.com',
+    author_email='weijx.cpp@gmail.com',
     license='MIT',
     classifiers=[
         'Development Status :: 4 - Beta',

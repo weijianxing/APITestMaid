@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 # ------ wuage.com testing team ---------
-# __author__ : jianxing.wei@wuage.com
+# __author__ : weijx.cpp@gmail.com
 from abc import ABCMeta
 
 from util.exceptions import ELError

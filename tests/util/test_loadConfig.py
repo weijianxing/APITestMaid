@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 # ------ wuage.com testing team ---------
-# __author__ : jianxing.wei@wuage.com
+# __author__ : weijx.cpp@gmail.com
 from util import  loadConfig
 from util.loadConfig import load_file, load_folder_files
 import os
