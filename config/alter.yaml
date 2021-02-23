@@ -1,0 +1,10 @@
+sendMsgWhenFail: True
+#online
+#dingToken: https://oapi.dingtalk.com/robot/send?access_token=58645e354eb5ccc6eb2b87da98e02e34708ee4e1ae9a66bc34f1477f85eb6f93
+#test
+dingToken: https://oapi.dingtalk.com/robot/send?access_token=0482e07d8bf330d022b909a44bffb75ea0d2174a48ef22ad15135df0fc05abd5
+owner: 魏建星
+caseTitle: API monitor
+atowners:
+  - 13520309744
+  - 魏建星

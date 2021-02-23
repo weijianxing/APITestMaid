@@ -1,0 +1,11 @@
+xlutils==2.0.0
+xlrd==1.2.0
+atlas==0.27.0
+beautifulsoup4==4.8.0
+colorlog
+colorama
+pyyaml
+fire
+Jinja2==2.11.1
+MarkupSafe==1.1.1
+pdfkit==0.6.1

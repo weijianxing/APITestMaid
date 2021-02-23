@@ -1,0 +1,41 @@
+#第一次使用YAML格式需要注意以下语法限制
+# 1.key: value 是字典类型或
+
+
+#接口协议类型 ：【https， HSF，Rest】
+types: https
+request:
+ uri: s.wuage.com/search/offer
+ method: get
+  #如果参数设定值就代表做默认值使用
+  # 如keywords = 螺纹钢
+  # 也可以使用fuzz工具提供的数据产生逻如 keywords=$autoInject
+  # 如果用户进行了扩展 通过钩子方式也可以返回要用的数据 如 keywords = $$AdTriggerQuery
+ parms:
+  keywords: "$autoInject"
+ headers:
+  cookie: ~
+#通常第一部分不对case进行验证 如果有verifications通常要进行默认检查(如果cases中没有指定会作为默认值进行校验)
+ verifications:
+  stasus: 200
+  values: $len > 0
+metatcases:
+ - caseName: case_common_search
+   parms:
+    keyworks: 螺纹钢
+    province: 北京
+    propertyString: "2175:83162656"
+   verifications:
+      #如果返回数据是json格式 可以直接使用框架提供的能力来访问json树状节点 来进行断言
+      #jason 方法方式表达式签名添加@@
+      #- response: @data.province = 北京
+      #jason 表达式有两部分组成：其中 yaml key中@@后是数据节点路径 ，value部分是EL表达式
+    response:@@data.province: "eq 北京"
+      #使用框架自定义一下断言功能来进行验证响应值
+      #字符串类型的断言 模板中 key部分$后跟的是自定义函数，value部分为函数的参数
+      #response:$strcontain: 螺纹 等同 str.strcontain("螺纹钢")
+    response:$strcontain: 螺纹
+      #使用自定义钩子来验证响应值
+      #自定义类型的断言 模板中 key部分$后跟的是自定义函数，value部分为函数的参数
+      #$$verifySearchOrder: 螺纹钢 等同 verifySearchOrder("螺纹钢")
+    response:$$verifySearchOrder: 螺纹钢

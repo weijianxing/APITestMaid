@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>search_report</title>
+</head>
+<body>
+    <div class="container-fluid col-12">
+        <div class="row font-weight-bold">
+            <span class="float-left">search_report</span> <span class="float-right">Tue Jul 14 2020</span>
+        </div>
+        <br>
+        <hr>
+        <table id="tableResult" class="table table-sm text-center">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">模块场景</th>
+                    <th scope="col">环境</th>
+                    <th scope="col">Test Case</th>
+                    <th scope="col">接口类型</th>
+                    <th scope="col">Result</th>
+                    <th scope="col">Error Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>searchSuggestion.yaml</td>
+                        <td></td>
+                        <td>case_common_search</td>
+                        <td>https</td>
+                        <td>Failed</td>
+                        <td>
+                             <a href="#case_common_search">View Errors</a>
+                            
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>searchSuggestion.yaml</td>
+                        <td></td>
+                        <td>case_binyin_search</td>
+                        <td>https</td>
+                        <td>Failed</td>
+                        <td>
+                             <a href="#case_binyin_search">View Errors</a>
+                            
+                        </td>
+                    </tr>
+                
+            </tbody>
+        </table>
+
+        <br>
+
+        <div class="col-4">
+            <table id="tableSummary" class="table table-sm table-striped table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">Status</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Passed</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Skipped</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Failed</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <th>Total</th>
+                        <th>2</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <br>
+
+        
+        
+        <table id="tableErrors" class="table table-sm text-center">
+            <thead class="thead-dark">
+                <tr>
+                    <th colspan="3" id="case_common_search">case_common_search</th>
+                </tr>
+                <tr>
+                    <th scope="col">Assert</th>
+                    <th scope="col">Errors</th>
+                    <th scope="col">Screenshot</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td></td>
+                    <td>Assert fail : AssertionError:  showWord can be empty. </td>
+                    
+                    <td>
+                        <a href=""></a>
+                    </td>
+                    
+                    <td>
+                        <a href=""></a>
+                    </td>
+                    
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        
+        
+        <table id="tableErrors" class="table table-sm text-center">
+            <thead class="thead-dark">
+                <tr>
+                    <th colspan="3" id="case_binyin_search">case_binyin_search</th>
+                </tr>
+                <tr>
+                    <th scope="col">Assert</th>
+                    <th scope="col">Errors</th>
+                    <th scope="col">Screenshot</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td></td>
+                    <td>Assert fail : AssertionError:  showWord can be empty. </td>
+                    
+                    <td>
+                        <a href=""></a>
+                    </td>
+                    
+                    <td>
+                        <a href=""></a>
+                    </td>
+                    
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        
+    </div>
+</body>
+</html>

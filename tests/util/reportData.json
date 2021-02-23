@@ -1,0 +1,20 @@
+[
+    {
+        "Application": "/Users/wuage/PycharmProjects/APITestMaid/tests/util/metacase/searchSuggestion.yaml",
+        "Environment": "",
+        "Id": "case_common_search",
+        "Test-Case": "case_common_search",
+        "APIType": "https",
+        "Error": [],
+        "Result": "Passed"
+    },
+    {
+        "Application": "/Users/wuage/PycharmProjects/APITestMaid/tests/util/metacase/searchSuggestion.yaml",
+        "Environment": "",
+        "Id": "case_binyin_search",
+        "Test-Case": "case_binyin_search",
+        "APIType": "https",
+        "Error": [],
+        "Result": "Passed"
+    }
+]

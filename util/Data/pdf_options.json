@@ -1,0 +1,11 @@
+{
+  "page-size": "A4",
+  "margin-top": "0.20in",
+  "margin-right": "0.20in",
+  "margin-bottom": "0.20in",
+  "margin-left": "0.20in",
+  "orientation": "Portrait",
+  "footer-right": "[page]/[topage]",
+  "footer-line": "",
+  "encoding": "UTF-8"
+}

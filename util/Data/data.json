@@ -1,0 +1,62 @@
+[
+  {
+    "Application": "搜索模块",
+    "Environment": "Dev",
+    "Id":  "test_001",
+    "Test-Case": "Test 001",
+    "APIType": "Https",
+    "Result": "Passed",
+    "Error": []
+  },
+  {
+    "Application": "搜索模块",
+    "Environment": "Dev",
+    "Id":  "test_002",
+    "Test-Case": "Test 002",
+    "APIType": "Https",
+    "Result": "Skipped",
+    "Error": [{
+      "Reason": "APIType not found"
+    }]
+  },
+  {
+    "Application": "搜索模块",
+    "Environment": "Dev",
+    "Id":  "test_003",
+    "Test-Case": "Test 003",
+    "APIType": "Https",
+    "Result": "Failed",
+    "Error": [
+      {
+        "Assert": "Assert 1",
+        "Description": "Something Failed",
+        "Screenshot": [
+          {
+            "Name": "Screenshot-1.png",
+            "Url": "#"
+          }
+        ]
+      },
+      {
+        "Assert": "Assert 2",
+        "Description": "Something Failed",
+        "Screenshot": [
+          {
+            "Name": "Screenshot-2.png",
+            "Url": "#"
+          }
+        ]
+      },
+      {
+        "Assert": "Assert 3",
+        "Description": "Something Failed",
+        "Screenshot": [
+          {
+            "Name": "Screenshot-3.png",
+            "Url": "#"
+          }
+        ]
+      }
+    ]
+  }
+]

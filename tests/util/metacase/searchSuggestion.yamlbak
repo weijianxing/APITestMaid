@@ -1,0 +1,48 @@
+#接口协议类型 ：【https， HSF，Rest】
+types: https
+#接口协议类型 ：【json,jsonp, default is text】,为了减少配置 系统根据verification 自动进行返回数据协议类型校验
+#responseDataType: jsonp
+request:
+ uri: "s.wuage.com/suggest/suggestwordext"
+ method: get
+#如果参数设定值就代表做默认值使用
+# 如keywords = 螺纹钢
+# 也可以使用fuzz工具提供的数据产生逻如 keywords=$autoInject
+# 如果用户进行了扩展 通过钩子方式也可以返回要用的数据 如 keywords = $$AdTriggerQuery
+ parms:
+  word: zitong
+  type: 2
+ headers:
+  cookie: "JSESSIONID=38078ed7-88ec-4d7d-9f4a-b6550c262094"
+#通常第一部分不对case进行验证 如果有verifications通常要进行默认检查(如果cases中没有指定会作为默认值进行校验)
+#todo response 相关状态：response:#stasus: 200
+ verifications:
+  response:%status: 200
+  response:#len:  "gt 20"
+###------------------------------------------
+metatcases:
+ - caseName: case_common_search
+   parms:
+    word: 不锈
+    type: 2
+   headers: ~
+   verifications:
+    #如果返回数据是json格式 可以直接使用框架提供的能力来访问json树状节点 来进行断言
+    #jason 方法方式表达式签名添加@@
+    #如果返回json对象的父节点是list类型，如果需要验证的是节点是一个list，对应的验证方法后添加s，如startwiths=不锈,验证的是一个arraylist类型的节点
+    #如果是jsion对象中的唯一节点用：startwith=不锈
+    #使用框架自定义的一下断言功能来进行验证响应值
+    #如果返回值中需要使用表达式中进行处理，$是框架提供，$$支持用户自定义扩展
+    response:@@.suggestWord: startwiths=不锈
+   #使用自定义钩子来验证响应值
+   #- response:$$verifySearchOrder: 螺纹钢
+    response:$$verifySearchOrder: "不锈"
+ - caseName: case_binyin_search
+   parms:
+    word: buxiu
+    type: 2
+   headers: ~
+   verifications:
+    response:@@.suggestWord: startwiths=不锈
+    response:$$verifySearchOrder: "不锈"
+

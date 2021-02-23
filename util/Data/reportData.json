@@ -1,0 +1,11 @@
+[
+    {
+        "Application": "searchSuggestion.yaml",
+        "Environment": "",
+        "Id": "case_common_search",
+        "Test-Case": "case_common_search",
+        "APIType": "https",
+        "Error": [],
+        "Result": "Passed"
+    }
+]
