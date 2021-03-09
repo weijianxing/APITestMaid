@@ -103,6 +103,7 @@ class MetaCase(metaclass = ABCMeta):
             self.verifications = request.baseVerification
         self.apiType = request.type
         self.uri = request.url
+        self.method = str(request.method).strip().upper()
         #
         self.response_code = 0
         # if str(request.getAPIType()).lower().startswith("http"):
@@ -123,7 +124,11 @@ class MetaCase(metaclass = ABCMeta):
         if self.apiType in supportProtocols:
             url = self.apiType + "://" + self.uri
 
-            self.response, self.response_code = HttpTools.request(url, postData=self.params, headers=self.headers)
+            logger.log_info("method : " + url)
+            logger.log_info("method : " + self.method)
+            #request(url, headers, postData=None, method = "GET"):
+
+            self.response, self.response_code = HttpTools.request(url, postData=self.params, headers=self.headers,method=self.method)
             logger.log_info("API response data: {0}".format(self.response))
 
         else:
