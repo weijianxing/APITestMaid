@@ -4,7 +4,8 @@ types: https
 #responseDataType: jsonp
 request:
  uri: "s.wuage.com/suggest/suggestwordext"
- method: get
+ method: post
+ body: '{"word": "不锈", "type": 2}'
 #如果参数设定值就代表做默认值使用
 # 如keywords = 螺纹钢
 # 也可以使用fuzz工具提供的数据产生逻如 keywords=$autoInject

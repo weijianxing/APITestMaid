@@ -31,6 +31,11 @@ class APIRequest():
             raise exceptions.MetaCaseFormatFailure("metacase request method : " + ["request"]["method"] + " is None")
         else:
             return content["request"]["method"]
+    def getRequestBody(self,content):
+        if content["request"]["body"] is None:
+            return ""
+        else:
+            return content["request"]["body"]
     def getRequestHeaders(self,content):
         return content["request"]["headers"]
     def getRequestParams(self,content):
@@ -42,6 +47,7 @@ class APIRequest():
         self.url = self.geturl(content)
         self.method = self.getRequestMethod(content)
         self.headers = self.getRequestHeaders(content)
+        self.body = self.getRequestBody(content)
         self.params = self.getRequestParams(content)
         self.baseVerification = self.getBaseVerifications(content)
 
@@ -104,6 +110,7 @@ class MetaCase(metaclass = ABCMeta):
         self.apiType = request.type
         self.uri = request.url
         self.method = str(request.method).strip().upper()
+        self.body = request.body
         #
         self.response_code = 0
         # if str(request.getAPIType()).lower().startswith("http"):
@@ -127,8 +134,14 @@ class MetaCase(metaclass = ABCMeta):
             logger.log_info("method : " + url)
             logger.log_info("method : " + self.method)
             #request(url, headers, postData=None, method = "GET"):
+            postdata = ""
+            if self.method == 'POST':
+                postdata = self.body
+            else:
+                postdata = self.params
+            logger.log_info("request data : " + str(postdata))
 
-            self.response, self.response_code = HttpTools.request(url, postData=self.params, headers=self.headers,method=self.method)
+            self.response, self.response_code = HttpTools.request(url, postData=postdata, headers=self.headers,method=self.method)
             logger.log_info("API response data: {0}".format(self.response))
 
         else:

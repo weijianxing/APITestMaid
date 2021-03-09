@@ -1,7 +1,7 @@
 #-*- coding: utf-8 -*-
 # ------ wuage.com testing team ---------
 # __author__ : weijx.cpp@gmail.com
-
+import json
 import urllib
 from io import StringIO
 from time import sleep
@@ -72,9 +72,11 @@ def request(url, headers, postData=None, method = "GET"):
                 logger.log_info("Get request URL is :  " + url)
             request = urllib.request.Request(url, None, headers)
         elif method == 'POST':
-            params = urllib.parse.urlencode(postData)
-            params = params.encode('utf-8')
-            request = urllib.request.Request(url, data=params, headers=headers)
+            # params = urllib.parse.urlencode(postData)
+            # params = params.encode('utf-8')
+            data = json.loads(postData)
+            formdata = urllib.parse.urlencode(data).encode("utf-8")
+            request = urllib.request.Request(url, data=formdata, headers=headers)
         else:
 
             raise urllib.error.URLError("method not defined.")
